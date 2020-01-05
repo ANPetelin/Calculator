@@ -10,6 +10,13 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
+    enum Action
+    {
+        Addition,
+        Substraction,
+        Multiplication,
+        Division
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -23,17 +30,14 @@ namespace Calculator
         string number_2 = "";
         int value_2 = 0;
         bool fract = false;
-        bool addition = false;
-        bool subtraction = false;
-        bool multiplication = false;
-        bool division = false;
-
+        Action action = Action.Addition;
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (actions == true)
             {
-                number_1 += "1";
+                number_1 = number_1.Insert(value, "1");
                 textBox1.Text = number_1;
                 value++;
             }
@@ -266,6 +270,11 @@ namespace Calculator
         private void button18_Click(object sender, EventArgs e)
         {
             textBox1.Text = "=";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
