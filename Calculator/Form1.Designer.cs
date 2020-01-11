@@ -303,7 +303,7 @@
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(41, 38);
             this.button24.TabIndex = 24;
-            this.button24.Text = "стереть посл. сим";
+            this.button24.Text = "Delete";
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
