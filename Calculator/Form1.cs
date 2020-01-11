@@ -13,9 +13,11 @@ namespace Calculator
     enum Action
     {
         Addition,
-        Substraction,
         Multiplication,
-        Division
+        Division,
+        Balance,
+        Power,
+        Root
     }
     public partial class Form1 : Form
     {
@@ -25,27 +27,24 @@ namespace Calculator
         }
 
         string number_1 = "";
-        int value = 0;
         bool actions = true;
         string number_2 = "";
-        int value_2 = 0;
         bool fract = false;
         Action action = Action.Addition;
+        string memory_1 = "";
        
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "1");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "1";
+                textBox1.Text = number_1;                
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "1");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "1";
+                textBox1.Text = number_2;                
             }
         }
 
@@ -53,15 +52,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "2");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "2";
+                textBox1.Text = number_1;                
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "2");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "2";
+                textBox1.Text = number_2;                
             }
         }
 
@@ -69,15 +66,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "3");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "3";
+                textBox1.Text = number_1;                
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "3");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "3";
+                textBox1.Text = number_2;                
             }
         }
 
@@ -85,15 +80,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "4");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "4";
+                textBox1.Text = number_1;                
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "4");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "4";
+                textBox1.Text = number_2;                
             }
         }
 
@@ -101,15 +94,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "5");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "5";
+                textBox1.Text = number_1;            
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "5");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "5";
+                textBox1.Text = number_2;           
             }
         }
 
@@ -117,15 +108,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "6");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "6";
+                textBox1.Text = number_1;            
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "6");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "6";
+                textBox1.Text = number_2;         
             }
         }
 
@@ -133,15 +122,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "7");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "7";
+                textBox1.Text = number_1;             
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "7");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "7";
+                textBox1.Text = number_2;              
             }
         }
 
@@ -149,15 +136,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "8");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "8";
+                textBox1.Text = number_1;              
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "8");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "8";
+                textBox1.Text = number_2;            
             }
         }
 
@@ -165,15 +150,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "9");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "9";
+                textBox1.Text = number_1;          
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "9");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "9";
+                textBox1.Text = number_2;              
             }
         }
 
@@ -181,15 +164,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "0");
-                textBox1.Text = number_1;
-                value++;
+                number_1 += "0";
+                textBox1.Text = number_1;              
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "0");
-                textBox1.Text = number_2;
-                value_2++;
+                number_2 += "0";
+                textBox1.Text = number_2;             
             }
         }
 
@@ -197,15 +178,13 @@ namespace Calculator
         {
             if (actions == true)
             {
-                number_1 = number_1.Insert(value, "00");
-                textBox1.Text = number_1;
-                value+=2;
+                number_1 += "00";
+                textBox1.Text = number_1;           
             }
             else
             {
-                number_2 = number_2.Insert(value_2, "00");
-                textBox1.Text = number_2;
-                value_2+=2;
+                number_2 += "00";
+                textBox1.Text = number_2;             
             }
         }
 
@@ -215,16 +194,14 @@ namespace Calculator
             {
                 if (actions == true)
                 {
-                    number_1 = number_1.Insert(value, ",");
+                    number_1 += ",";
                     textBox1.Text = number_1;
-                    value++;
                     fract = true;
                 }
                 else
                 {
-                    number_2 = number_2.Insert(value_2, ",");
+                    number_2 += ",";
                     textBox1.Text = number_2;
-                    value_2++;
                     fract = true;
                 }
             }
@@ -236,7 +213,8 @@ namespace Calculator
         {
             actions = false;
             fract = false;
-            textBox1.Text = "+";        
+            textBox1.Text = "+";
+            action = Action.Addition;
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -244,6 +222,7 @@ namespace Calculator
             actions = false;
             fract = false;
             textBox1.Text = "-";
+            action = Action.Balance;
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -251,6 +230,7 @@ namespace Calculator
             actions = false;
             fract = false;
             textBox1.Text = "*";
+            action = Action.Multiplication;
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -258,23 +238,217 @@ namespace Calculator
             actions = false;
             fract = false;
             textBox1.Text = "/";
+            action = Action.Division;
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             actions = false;
             fract = false;
-            textBox1.Text = "%";
+            if (action == Action.Addition || action == Action.Balance)
+            {
+                number_2 = Convert.ToString(Convert.ToDouble(number_1) * Convert.ToDouble(number_2) / 100);
+                textBox1.Text = number_2;
+            }
+            else
+            {
+                number_2 = Convert.ToString(Convert.ToDouble(number_2) / 100);
+                textBox1.Text = number_2;
+            }
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "=";
+            switch (action)
+            {
+                case Action.Addition:
+                    {
+                        number_1 = Convert.ToString(Convert.ToDouble(number_1) + Convert.ToDouble(number_2));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+                case Action.Balance:
+                    {
+                        number_1 = Convert.ToString(Convert.ToDouble(number_1) - Convert.ToDouble(number_2));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+                case Action.Multiplication:
+                    {
+                        number_1 = Convert.ToString(Convert.ToDouble(number_1) * Convert.ToDouble(number_2));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+                case Action.Division:
+                    {
+                        number_1 = Convert.ToString(Convert.ToDouble(number_1) / Convert.ToDouble(number_2));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+                case Action.Power:
+                    {
+                        number_1 = Convert.ToString(Math.Pow(Convert.ToDouble(number_1), Convert.ToDouble(number_2)));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+                case Action.Root:
+                    {
+                        number_1 = Convert.ToString(Math.Pow(Convert.ToDouble(number_1), 1/Convert.ToDouble(number_2)));
+                        textBox1.Text = number_1;
+                        number_2 = "";
+                        actions = true;
+                        fract = false;
+                        break;
+                    }
+
+            }
         }
+        private void button19_Click(object sender, EventArgs e)
+        {
+            number_1 = "";
+            textBox1.Text = number_1;
+            actions = true;
+            number_2 = "";
+            fract = false;
+            action = Action.Addition;
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
+            number_1 = Convert.ToString(1 / Convert.ToDouble(number_1));
+            textBox1.Text = number_1;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            number_1 = Convert.ToString(Convert.ToDouble(number_1)* Convert.ToDouble(number_1));
+            textBox1.Text = number_1;
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            number_1 = Convert.ToString(Math.Sqrt(Convert.ToDouble(number_1)));
+            textBox1.Text = number_1;
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            if (actions == true)
+            {
+                if (number_1.Contains("-"))
+                {
+                    number_1 = number_1.Replace("-", "");
+                    textBox1.Text = number_1;
+                }
+                else
+                {
+                    number_1 = number_1.Insert(0, "-");
+                    textBox1.Text = number_1;
+                }
+            }
+            else
+            {
+                if (number_2.Contains("-"))
+                {
+                    number_2 = number_2.Replace("-", "");
+                    textBox1.Text = number_2;
+                }
+                else
+                {
+                    number_2 = number_2.Insert(0, "-");
+                    textBox1.Text = number_2;
+                }
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            
+            if (actions == true)
+            {
+                int value_1 = number_1.Length;
+                number_1 = number_1.Remove(value_1-1);
+                textBox1.Text = number_1;
+            }
+            else
+            {
+                int value_2 = number_2.Length;
+                number_2 = number_2.Remove(value_2 - 1);
+                textBox1.Text = number_2;
+            }
+            
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            if (actions == true)
+            {
+                memory_1 = textBox1.Text;
+                number_1 = "";
+                textBox1.Text = number_1;
+            }
+            else
+            {
+                memory_1 = textBox1.Text;
+                number_2 = "";
+                textBox1.Text = number_2;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            memory_1 = "";
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            if (actions == true)
+            {
+                number_1 = memory_1;
+                textBox1.Text = number_1;
+            }
+            else
+            {
+                number_2 = memory_1;
+                textBox1.Text = number_2;
+            }
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            actions = false;
+            fract = false;
+            textBox1.Text = "^";
+            action = Action.Power;
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            actions = false;
+            fract = false;
+            textBox1.Text = "root";
+            action = Action.Root;
         }
     }
 }
